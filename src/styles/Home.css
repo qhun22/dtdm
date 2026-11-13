@@ -1,0 +1,149 @@
+.home {
+  min-height: 100vh;
+  background: #0f172a;
+  color: #f1f5f9;
+  padding-bottom: 2rem;
+}
+
+.home-header {
+  background: linear-gradient(135deg, #1e40af 0%, #7c3aed 100%);
+  padding: 2.5rem 1.25rem 2rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.home-header::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 70% 50%, rgba(255,255,255,0.08) 0%, transparent 70%);
+}
+
+.header-icon {
+  font-size: 3rem;
+  margin-bottom: 0.75rem;
+  display: block;
+}
+
+.home-header h1 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin: 0 0 0.4rem;
+  letter-spacing: -0.5px;
+}
+
+.home-header p {
+  font-size: 0.95rem;
+  color: rgba(255,255,255,0.75);
+  margin: 0;
+}
+
+.lesson-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 1.25rem;
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+.lesson-card {
+  background: #1e293b;
+  border-radius: 16px;
+  padding: 1.1rem 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  cursor: pointer;
+  border: 1.5px solid transparent;
+  transition: all 0.2s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.lesson-card::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: linear-gradient(180deg, #3b82f6, #8b5cf6);
+  border-radius: 3px 0 0 3px;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.lesson-card:not(.lesson-card--locked):active {
+  transform: scale(0.98);
+}
+
+.lesson-card:not(.lesson-card--locked):hover {
+  border-color: #3b82f6;
+  background: #263349;
+}
+
+.lesson-card:not(.lesson-card--locked):hover::before {
+  opacity: 1;
+}
+
+.lesson-card--locked {
+  cursor: default;
+  opacity: 0.55;
+}
+
+.lesson-card__badge {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #64748b;
+  letter-spacing: 0.5px;
+  min-width: 2rem;
+  text-align: center;
+}
+
+.lesson-card__icon {
+  font-size: 1.75rem;
+  min-width: 2.5rem;
+  text-align: center;
+}
+
+.lesson-card__content {
+  flex: 1;
+  min-width: 0;
+}
+
+.lesson-card__content h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0 0 0.2rem;
+  color: #f1f5f9;
+}
+
+.lesson-card__content p {
+  font-size: 0.8rem;
+  color: #94a3b8;
+  margin: 0 0 0.35rem;
+  line-height: 1.4;
+}
+
+.lesson-card__count {
+  font-size: 0.72rem;
+  color: #3b82f6;
+  font-weight: 600;
+  background: rgba(59,130,246,0.12);
+  padding: 0.15rem 0.5rem;
+  border-radius: 20px;
+}
+
+.lesson-card__locked {
+  font-size: 0.72rem;
+  color: #64748b;
+}
+
+.lesson-card__arrow {
+  font-size: 1.5rem;
+  color: #3b82f6;
+  font-weight: 300;
+  opacity: 0.6;
+}
